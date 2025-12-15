@@ -74,32 +74,6 @@ All tools are released openly under the Apache License 2.0.
 
 ---
 
-## Repository Structure
-
-```text
-RAIS-Tools-and-Utilities/
-├── README.md
-├── LICENSE
-└── utilities/
-    ├── AutoNoc/
-    ├── ChatGPT-Thread-Extractor/
-    ├── aiparley/
-    ├── arch-linux-auto/
-    ├── autonomous-dream-injection/
-    ├── browserclocks/
-    └── imagegen/```
-
-
-Each directory under `utilities/` contains a self-contained tool with:
-
-- Its own README and documentation
-- Its own license reference
-- A clearly stated purpose and maturity level
-
-Tools are designed to be understandable and usable in isolation.
-
----
-
 ## Design Philosophy
 
 All tools published in this repository follow principles established through Resonant AI Core research and operational experience.
