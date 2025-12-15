@@ -87,7 +87,7 @@ RAIS-Tools-and-Utilities/
     ├── arch-linux-auto/
     ├── autonomous-dream-injection/
     ├── browserclocks/
-    └── imagegen/
+    └── imagegen/```
 
 
 Each directory under `utilities/` contains a self-contained tool with:
