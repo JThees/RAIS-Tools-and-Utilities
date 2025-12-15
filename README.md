@@ -2,7 +2,7 @@
 
 # Resonant AI Systems TOOLS & UTILITIES
 
-## SOVEREIGN AI RESEARCH TOOLKIT
+## SOVEREIGN AI TOOLKIT
 
 ### Built by Resonant AI Core  
 **Research & Development Division of Resonant AI Systems**
