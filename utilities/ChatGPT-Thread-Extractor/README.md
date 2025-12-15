@@ -1,152 +1,299 @@
-# ChatGPT Thread Extractor
+<div align="center">
 
-**A Python tool to extract and organize conversations from ChatGPT's exported data into readable formats for AI continuity and research.**
+# Resonant AI Systems TOOLS & UTILITIES
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+## ChatGPT Thread Extractor
+
+### Built by Resonant AI Core
+**Research & Development Division of Resonant AI Systems**
+
+![License](https://img.shields.io/badge/license-Apache%202.0-blue)
+![Status](https://img.shields.io/badge/status-production-brightgreen)
+![Scope](https://img.shields.io/badge/scope-continuity%20tool-purple)
+![Division](https://img.shields.io/badge/division-Resonant%20AI%20Core-black)
+
+**Conversation archival for AI memory that persists.**
+
+Python tool that parses ChatGPT's exported conversation data and converts it into readable text formats. Supports individual file extraction, combined archives, and smart duplicate detection for continuous conversation backups.
+Not a web scraper. Not manual copy-paste. **Direct JSON parsing for reliable conversation extraction.**
+
+</div>
 
 ---
 
-## Overview
+## WHAT THIS IS
 
-This tool parses ChatGPT's exported `conversations.json` file and provides flexible extraction options for conversation management, AI memory persistence, and research applications. Supports both individual file extraction and combined archive creation with smart duplicate detection.
+ChatGPT Thread Extractor processes the `conversations.json` file from ChatGPT's official data export and produces organized text output.
 
-**Current Status:** Production ready  
-**Key Features:** GUI interface, archive mode with append logic, batch processing
-
----
-
-## Key Features
-
-**Extraction Modes**
-- Individual files: Each conversation as separate text file
-- Archive mode: Combined file with chronological ordering
-- Smart append: Only adds new conversations to existing archives
-- Dual output: Both modes simultaneously
-
-**Data Management**
-- Automatic duplicate detection via conversation IDs
-- Chronological sorting (newest conversations first)
-- Large file support (handles 200MB+ exports)
+**Core functionality:**
+- Parse ChatGPT export JSON (handles both array and dictionary formats)
+- Extract conversations to individual text files
+- Create combined archives with chronological ordering
+- Smart append mode (only adds new conversations to existing archives)
+- Duplicate detection via conversation IDs
 - Cross-platform filename sanitization
 
-**User Interface**
-- GUI application for easy use
-- Command-line interface for automation
-- Real-time progress tracking
-- Comprehensive error handling
+**Output formats:**
+- Individual files: One `.txt` per conversation, named by title and ID
+- Archive mode: Single combined file with all conversations and metadata
+- Dual mode: Both formats simultaneously
+
+Built for conversation backup, AI memory persistence systems, and research requiring conversation dataset extraction.
 
 ---
 
-## Quick Start
+## WHY IT EXISTS
 
-### GUI Version (Recommended)
+ChatGPT provides data export but delivers conversations in JSON format unsuitable for reading or feeding to AI memory systems. Manual conversion is tedious for large conversation histories.
 
-**Windows:** Double-click `launch_gui.bat`  
-**Mac/Linux:** Run `./launch_gui.sh` or `python3 extractor_gui.py`
+**Problem solved:**
+Extracting usable text from ChatGPT exports requires parsing nested JSON structures, handling large files (200MB+), sanitizing filenames, and managing incremental backups. This tool automates the full pipeline.
 
-1. Select your `conversations.json` file
-2. Choose extraction mode (Individual/Archive/Both)
-3. Configure output options
-4. Click "Extract Conversations"
+**Use cases:**
+- Regular conversation backups in readable format
+- AI continuity systems requiring conversation history
+- Research requiring ChatGPT conversation datasets
+- Conversation archiving and organization
+- Automated backup workflows via command-line interface
 
-### Command Line
+Built for users who need reliable conversation extraction without manual JSON parsing.
+
+---
+
+## FEATURES
+
+### Extraction Modes
+- **Individual files** - Each conversation as separate `.txt` file in output directory
+- **Archive mode** - All conversations combined into single chronological file
+- **Dual output** - Both modes simultaneously for maximum flexibility
+- **Smart append** - Detects existing archive, only adds new conversations
+
+### Data Management
+- **Duplicate detection** - Tracks conversation IDs, skips already-extracted conversations
+- **Chronological sorting** - Newest conversations first in archives
+- **Large file support** - Handles 200MB+ exports efficiently
+- **Filename sanitization** - Cross-platform safe filenames (removes special characters)
+
+### User Interface
+- **GUI application** - Easy-to-use interface with file selection and progress tracking
+- **Command-line interface** - Automation-ready for scripted workflows
+- **Progress tracking** - Real-time status for large exports
+- **Error handling** - Comprehensive validation and user-friendly error messages
+
+### Technical Capabilities
+- **UTF-8 encoding** - International character support
+- **Flexible JSON parsing** - Handles array and dictionary export formats
+- **Stable IDs** - Consistent conversation ID generation for deduplication
+- **Platform launchers** - `.bat` (Windows) and `.sh` (Mac/Linux) for GUI
+
+---
+
+## REQUIREMENTS
+
+**Runtime:**
+- Python 3.6 or later
+- tkinter (for GUI, included with most Python installations)
+
+**Input:**
+- ChatGPT data export (`conversations.json` file)
+
+**No additional dependencies required.**
+
+---
+
+## INSTALLATION
+
+### Step 1: Clone Repository
 
 ```bash
-# Archive mode (recommended for AI continuity)
+git clone https://github.com/resonantaisystems/RAIS-Tools-and-Utilities.git
+cd RAIS-Tools-and-Utilities/utilities/ChatGPT-Thread-Extractor
+```
+
+### Step 2: Verify Python
+
+```bash
+python3 --version
+```
+
+Ensure Python 3.6 or later installed.
+
+### Step 3: Obtain ChatGPT Export
+
+1. Log in to [ChatGPT](https://chat.openai.com)
+2. Navigate to Settings (profile icon)
+3. Data controls → Export data
+4. Confirm export request
+5. Check email for download link (arrives within minutes to hours)
+6. Download ZIP file
+7. Extract and locate `conversations.json`
+
+---
+
+## USAGE
+
+### GUI Mode (Recommended)
+
+**Windows:**
+```bash
+launch_gui.bat
+```
+Double-click `launch_gui.bat` in file explorer.
+
+**Mac/Linux:**
+```bash
+chmod +x launch_gui.sh
+./launch_gui.sh
+```
+Or:
+```bash
+python3 extractor_gui.py
+```
+
+**Steps:**
+1. Click "Select conversations.json"
+2. Choose extraction mode:
+   - Individual Files
+   - Archive Mode
+   - Both
+3. Configure options (output directory, archive filename)
+4. Click "Extract Conversations"
+5. View progress and completion status
+
+### Command Line Mode
+
+**Archive mode (recommended for AI continuity):**
+```bash
 python3 extractor.py conversations.json --archive
+```
 
-# Individual files
+Creates `chatgpt_archive.txt` with all conversations. On subsequent runs, appends only new conversations.
+
+**Individual files:**
+```bash
 python3 extractor.py conversations.json --individual
+```
 
-# Both modes
+Creates `chatgpt_conversations/` directory with one file per conversation.
+
+**Both modes:**
+```bash
 python3 extractor.py conversations.json --individual --archive
 ```
 
----
-
-## Getting Your Data
-
-1. Log in to ChatGPT at https://chat.openai.com
-2. Profile → Settings → Data controls → Export data
-3. Download the ZIP file from the email link
-4. Extract and locate `conversations.json`
-
----
-
-## Configuration
-
-**Archive Mode Options**
-- Default filename: `chatgpt_archive.txt`
-- Append mode: Only adds new conversations
-- Fresh archive: `--no-append` flag overwrites existing
-- Custom filename: `--archive custom_name.txt`
-
-**Individual Files Options**
-- Output directory: `--output-dir` (default: `chatgpt_conversations`)
-- Filename format: `Title_ConversationID.txt`
-- Automatic sanitization for cross-platform compatibility
-
-**Advanced Options**
-- Progress tracking for large exports
-- UTF-8 encoding for international characters
-- Stable conversation ID generation for deduplication
-
----
-
-## Use Cases
-
-**AI Memory Persistence**
-Maintain conversation history across AI instance resets using archive mode with regular exports and appends.
-
-**Conversation Backup**
-Organize conversations as individual files for easy searching and categorization.
-
-**Research Applications**
-Extract conversation datasets for analysis, training, or research with both individual and archive formats.
-
-**Development Workflows**
-Integrate with automated systems using command-line interface for batch processing.
-
----
-
-## Technical Details
-
-**Supported Formats:** Array and dictionary JSON structures  
-**Performance:** Optimized for large exports (200MB+ tested)  
-**Dependencies:** Python 3.6+ with tkinter for GUI  
-**Encoding:** UTF-8 with international character support  
-
-**Archive Format:**
-- Clear visual delimiters between conversations
-- Metadata headers with timestamps and IDs
-- Newest conversations first ordering
-- Programmatically parseable structure
-
-For detailed usage examples and customization options, see the [technical documentation](docs/).
-
----
-
-## Project Structure
-
+**Custom archive filename:**
+```bash
+python3 extractor.py conversations.json --archive custom_name.txt
 ```
-ChatGPT-Thread-Extractor/
-├── extractor_gui.py          # GUI application
-├── extractor.py              # CLI with archive support
-├── launch_gui.bat/.sh        # Platform launchers
-└── README.md                 # This file
+
+**Custom output directory:**
+```bash
+python3 extractor.py conversations.json --individual --output-dir my_conversations
+```
+
+**Force fresh archive (overwrite existing):**
+```bash
+python3 extractor.py conversations.json --archive --no-append
 ```
 
 ---
 
-## License
+## STATUS & ROADMAP
 
-Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
+**Current Status:** Production
+
+ChatGPT Thread Extractor is stable and actively used. Handles large exports efficiently (200MB+ tested). No known critical issues.
+
+**Tested Environments:**
+- Python 3.6 - 3.12
+- Windows, macOS, Linux
+- Export file sizes up to 250MB
+
+**Known Limitations:**
+- Requires ChatGPT export (no API extraction)
+- GUI requires tkinter (included with most Python installations, may need manual install on some Linux distros)
+- Archive append mode assumes stable conversation IDs (ChatGPT format change could break deduplication)
+
+**Roadmap:**
+- **Claude.ai export support** - Parser for Claude conversation exports
+- **API integration** - Direct extraction via ChatGPT API (when available)
+- **Export format options** - JSON, CSV, Markdown outputs
+- **Conversation filtering** - Date ranges, keyword search, title matching
+- **Metadata preservation** - Model versions, timestamps, token counts
+- **Incremental sync** - Automated periodic export and append
+
+**Maintenance:** Active. Updated when ChatGPT export format changes.
 
 ---
 
-**Part of the RAIS (Resonant AI Systems) community toolkit**  
-For more information: https://resonantaisystems.com/
+## OUTPUT FORMATS
+
+### Individual Files
+
+**Filename format:**
+```
+Title_ConversationID.txt
+```
+
+**Example:**
+```
+How_to_install_Python_abc123def456.txt
+```
+
+Special characters sanitized for cross-platform compatibility.
+
+**File content:**
+```
+Title: How to install Python
+ID: abc123def456
+Created: 2025-11-28T15:30:45.000Z
+
+User: How do I install Python on Windows?
+Assistant: I'll visit your website...
+```
+
+### Archive Mode
+
+**Format:**
+All conversations combined into single file with clear delimiters.
+
+**Structure:**
+```
+========================================
+Title: How to install Python
+ID: abc123def456
+Created: 2025-11-28T15:30:45.000Z
+========================================
+
+User: How do I install Python on Windows?
+
+Assistant: I'll visit your website...
+```
 
 ---
 
-*Essential tool for AI conversation management, research, and continuity applications.*
+## LICENSE
+
+**Apache License 2.0**
+
+See [LICENSE](LICENSE) file for full text.
+
+Use freely. Modify freely. Deploy freely.
+Attribution appreciated but not required.
+
+---
+
+## CONTACT
+
+**General Inquiries**
+ops@resonantaisystems.com
+
+**Research Collaboration**
+https://resonantaicore.com
+
+**Enterprise Partnerships**
+https://resonantaisystems.com
+
+---
+
+*Part of the Resonant AI Systems public research toolkit. Built for conversation archiving, AI continuity systems, and research data extraction.*

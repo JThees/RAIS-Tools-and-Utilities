@@ -1,220 +1,271 @@
-# AutoNoc
+<div align="center">
 
-**Automatic Network Operations Center**
+# Resonant AI Systems TOOLS & UTILITIES
 
-A Raspberry Pi 5-based physical monitoring station for infrastructure surveillance and autonomous response.
+## AutoNoc
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Hardware%20Assembly-yellow.svg)]()
-[![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%205-red.svg)]()
+### Built by Resonant AI Core
+**Research & Development Division of Resonant AI Systems**
 
----
+![License](https://img.shields.io/badge/license-Apache%202.0-blue)
+![Status](https://img.shields.io/badge/status-active%20development-brightgreen)
+![Scope](https://img.shields.io/badge/scope-infrastructure%20tool-purple)
+![Division](https://img.shields.io/badge/division-Resonant%20AI%20Core-black)
 
-## What Is This?
+**Autonomous network operations center on hardware you control.**
 
-AutoNoc is a hardware monitoring station built on Raspberry Pi 5 that will provide:
+Raspberry Pi 5-based physical monitoring station for infrastructure surveillance. Environmental sensing, vibration detection, GPS positioning, and visual status displays integrated into a single hardware platform.
+Not cloud monitoring. Not SaaS dashboards. **Local-first observability on your hardware.**
 
-- **Environmental monitoring** - Temperature, humidity, pressure via BME280 sensor
-- **Distributed sensing** - Multiple temperature probes across server rack
-- **Vibration detection** - Equipment health monitoring via SW-420 sensors  
-- **GPS positioning** - Location and time synchronization
-- **Visual displays** - LED matrix and RGB strips for status indication
-- **Autonomous alerting** - Planned SMS/email notifications for critical events
-
-Part of **Resonant AI Systems** infrastructure.
+</div>
 
 ---
 
-## Current Status
+## WHAT THIS IS
 
-**Phase: Hardware Assembly**
+AutoNoc is a hardware monitoring station that combines multiple sensor types with visual displays to provide continuous infrastructure surveillance and autonomous alerting.
 
-✅ **Completed:**
-- Raspberry Pi 5 (16GB) with NVMe HAT installed
-- Boot from Samsung 980 Pro 500GB NVMe SSD
+**Core components:**
+- Environmental monitoring (temperature, humidity, barometric pressure)
+- Distributed temperature sensing across server rack spaces
+- Vibration detection for equipment health monitoring
+- GPS positioning and time synchronization
+- Visual status indication via LED matrix and RGB strips
+- Autonomous alerting for threshold violations
+
+Built on Raspberry Pi 5 (16GB) with NVMe boot, designed for 24/7 operation in server rack environments. All sensors connected via GPIO, displays driven independently with external power.
+
+---
+
+## WHY IT EXISTS
+
+Server room monitoring requires multiple independent systems: environmental sensors, equipment health checks, alerting infrastructure. Combining these into a single integrated platform reduces complexity and enables correlation across sensor data.
+
+**Problem solved:**
+Manual infrastructure monitoring misses gradual degradation. Temperature creep, vibration changes, and environmental drift happen slowly. Automated monitoring with threshold triggers catches problems before failures occur.
+
+**Use cases:**
+- Server rack environmental monitoring
+- Lab equipment health surveillance
+- Physical security sensor integration
+- Research infrastructure observability
+
+Built for operators running their own hardware who need continuous monitoring without cloud dependencies.
+
+---
+
+## FEATURES
+
+### Sensor Capabilities
+- **BME280 environmental sensor** - Temperature, humidity, barometric pressure (I2C)
+- **4x DS18B20 temperature probes** - Distributed rack temperature monitoring (1-wire)
+- **5x SW-420 vibration sensors** - Equipment vibration/shock detection (digital GPIO)
+- **2x GY-NEO6MV2 GPS modules** - Location tracking and time sync (UART)
+
+### Display Systems
+- **2x MAX7219 LED matrix** - 8x32 pixel scrolling status displays
+- **2x WS2812B RGB LED strips** - Color-coded status indication
+- **3.5" HDMI touchscreen** - Local dashboard and configuration interface
+
+### Alert Architecture (Planned)
+- Threshold-based trigger logic
+- SMS/email notifications via external services
+- Local alarm (buzzer/LED patterns)
+- Event logging with timestamp and sensor correlation
+
+### Infrastructure
+- **Raspberry Pi 5 (16GB)** with NVMe boot (Samsung 980 Pro 500GB)
+- **Active cooling** for thermal stability
+- **Rack-mountable** on 1U server shelf
+- **External power monitoring** via P3 P4400 Kill-A-Watt
+
+---
+
+## REQUIREMENTS
+
+**Hardware:**
+- Raspberry Pi 5 (8GB or 16GB recommended)
+- NVMe HAT + NVMe SSD (boot performance)
+- Sensors listed in hardware section (BME280, DS18B20, SW-420, GPS modules)
+- Displays (MAX7219, WS2812B, HDMI touchscreen)
+- 27W USB-C power supply
+- Breadboard or power distribution board for sensor wiring
+
+**Software:**
+- Raspberry Pi OS (64-bit, Bookworm or later)
+- Python 3.9+
+- GPIO libraries (RPi.GPIO or gpiod)
+- Sensor-specific libraries (smbus2, bme280, pyserial, rpi_ws281x, luma.led_matrix)
+
+**Optional:**
+- InfluxDB (for time-series data logging)
+- Grafana (for dashboard visualization)
+- SMS/email service credentials (for remote alerting)
+
+---
+
+## INSTALLATION
+
+**Current Status:** Hardware assembly in progress. Installation instructions will be added when software development begins.
+
+### Hardware Assembly (In Progress)
+
+1. **Core platform setup**
+   - Install NVMe HAT on Raspberry Pi 5
+   - Flash Raspberry Pi OS to NVMe SSD
+   - Configure boot from NVMe (requires bootloader update)
+   - Install active cooler
+
+2. **GPIO preparation**
+   - Pins 1-10 and 39-40 unavailable (NVMe HAT conflict)
+   - Working range: GPIO pins 11-38 (28 pins available)
+   - Wire GPIO pins 11-38 to breakout board for sensor access
+
+3. **Sensor wiring** (Planned)
+   - BME280 → Pins 27-28 (I2C, GPIO0/1)
+   - GPS modules → Pins 35, 38 (UART, GPIO19/20)
+   - Vibration sensors → Pin 13 (GPIO27, digital input)
+   - Temperature probes → Pin 11 (GPIO17, 1-wire)
+   - All sensors powered from Pin 17 (3.3V, ~70mA total draw)
+
+4. **Display wiring** (Planned)
+   - LED matrix and RGB strips require external 5V power supply
+   - Common ground with Pi GPIO
+   - Data lines connected to available GPIO pins
+
+5. **Software installation** (Not Started)
+   - Clone repository
+   - Install Python dependencies
+   - Configure sensor communication (I2C, UART, 1-wire)
+   - Test individual sensors
+   - Configure display drivers
+
+Full installation guide will be added once hardware assembly completes.
+
+---
+
+## USAGE
+
+**Usage documentation will be added when software development begins.**
+
+Planned functionality:
+- Systemd service for continuous monitoring
+- Configuration file for sensor thresholds
+- Local web interface for status dashboard
+- Manual alert triggers for testing
+- Data export for external analysis
+
+---
+
+## STATUS & ROADMAP
+
+**Current Status:** Active Development (Hardware Assembly Phase)
+
+### Completed
+- Core platform assembled (Pi 5, NVMe HAT, active cooling)
+- Boot from NVMe working (Samsung 980 Pro 500GB)
 - GPIO pins 11-38 wired to breakout board
 - All sensors and displays received and identified
 - Power distribution strategy planned
 
-⏳ **In Progress:**
+### In Progress
 - Wiring sensors to GPIO pins
-- Configuring I2C/UART/GPIO communication
-- Breadboard kit on order for clean power distribution
+- Configuring I2C/UART/GPIO communication protocols
+- Breadboard power distribution setup
 
-❌ **Not Started:**
-- Software development
-- Sensor calibration
-- Display programming
-- Alert logic
-- Production deployment
+### Not Started
+- Software development (sensor polling daemon)
+- Sensor calibration and testing
+- Display programming (LED matrix, RGB strips)
+- Alert logic implementation
+- Production deployment and rack mounting
+
+### Known Issues
+- **I2C bus configuration** - Default I2C (pins 3/5) available, alternate I2C (GPIO0/1) requires device tree overlay configuration
+- **False I2C detection** - Initial testing showed devices detected on all I2C addresses (bus configuration error)
+- **Power distribution** - Pin 17 (3.3V) must power all sensors, breadboard module needed for clean wiring
+
+### Roadmap
+- **Phase 1 (Current)** - Complete sensor wiring, test I2C/UART communication, basic sensor reading scripts
+- **Phase 2** - Wire displays, implement status display code, GPS time sync
+- **Phase 3** - Monitoring daemon, alert logic, threshold configuration, logging infrastructure
+- **Phase 4** - Custom case panels (RAIC logo, symbols, screen mount), rack mounting, production deployment
+
+**Target:** Operational monitoring station by Q1 2025
 
 ---
 
-## Hardware
+## HARDWARE DETAILS
 
 ### Core Platform
 - **Raspberry Pi 5** (16GB RAM)
-- **GeekPi N04 NVMe HAT** + Samsung 980 Pro 500GB
-- **GeekPi Active Cooler**
+- **GeekPi N04 NVMe HAT** + Samsung 980 Pro 500GB NVMe SSD
+- **GeekPi Active Cooler** (thermal management)
 - **27W USB-C GaN Power Supply**
 
-### Sensors (Ordered, Not Yet Wired)
-- **Waveshare BME280** - Environmental sensor (temp/humidity/pressure)
-- **5x SW-420** - Vibration sensors
+### Sensors
+- **Waveshare BME280** - Environmental sensor (I2C)
+- **5x SW-420** - Vibration/shock sensors (digital)
 - **4x DS18B20** - Waterproof temperature probes (1-wire)
-- **2x GY-NEO6MV2** - GPS modules
+- **2x GY-NEO6MV2** - GPS modules (UART)
 
-### Displays (Ordered, Not Yet Wired)
+### Displays
 - **2x MAX7219 LED Matrix** (8x32 pixels)
 - **2x WS2812B RGB LED Strips**
 - **HAMTYSAN 3.5" HDMI Touchscreen**
 
 ### Infrastructure
 - **SABRENT 4-Port USB 3.0 Hub**
-- **ElectroCookie Mini PC Case** (ordered for custom panel mod)
-- **Breadboard kit** (ordered for power distribution)
-- **P3 P4400 Kill-A-Watt** power monitor
-- **19" 1U Server Shelf** for rack mounting
+- **ElectroCookie Mini PC Case** (for custom panel modifications)
+- **Breadboard kit** (power distribution)
+- **P3 P4400 Kill-A-Watt** (external power monitoring)
+- **19" 1U Server Shelf** (rack mounting)
+
+**Total Hardware Cost:** ~$420
 
 ---
 
-## GPIO Pin Constraints
+## GPIO PIN ALLOCATION
 
-**Pins 1-10 and 39-40 are unavailable** due to NVMe HAT usage and physical clearance.
+**Pins 1-10 and 39-40 unavailable** (NVMe HAT physical clearance)
 
-**Working range: Pins 11-38** (28 GPIO pins available)
+**Working range: Pins 11-38** (28 GPIO pins)
 
-### Planned Sensor Connections
+### Planned Connections
 
 | Component | Power | Ground | Data Pins | Protocol |
 |-----------|-------|--------|-----------|----------|
 | BME280 | Pin 17 (3.3V) | Pin 20 | Pins 27-28 (GPIO0/1) | I2C |
-| GPS | Pin 17 (3.3V) | Pin 25 | Pins 35,38 (GPIO19/20) | UART |
+| GPS | Pin 17 (3.3V) | Pin 25 | Pins 35, 38 (GPIO19/20) | UART |
 | Vibration | Pin 17 (3.3V) | Pin 14 | Pin 13 (GPIO27) | Digital |
 | Temp Probes | Pin 17 (3.3V) | Pin 14 | Pin 11 (GPIO17) | 1-Wire |
 
-**Note:** LED displays require external 5V power supply, not Pi GPIO.
+**Note:** LED displays require external 5V power supply, not GPIO power.
 
 ---
 
-## Software Stack (Planned)
+## LICENSE
 
-### Operating System
-- Raspberry Pi OS (64-bit, Bookworm)
-- Boot from NVMe for performance
+**Apache License 2.0**
 
-### Libraries (To Be Installed)
-- **RPi.GPIO** / **gpiod** - GPIO control
-- **smbus2** / **bme280** - I2C sensor communication
-- **pyserial** - GPS UART communication
-- **rpi_ws281x** - RGB LED control
-- **luma.led_matrix** - MAX7219 LED matrix
+See [LICENSE](LICENSE) file for full text.
 
-### Services (To Be Developed)
-- Python daemon for sensor polling
-- Alert manager for threshold triggers
-- Status display controller
-- Data logging (InfluxDB planned)
+Use freely. Modify freely. Deploy freely.
+Attribution appreciated but not required.
 
 ---
 
-## Known Issues
+## CONTACT
 
-### I2C Bus Configuration
-- Default I2C (pins 3/5) is available despite NVMe HAT
-- Alternate I2C (GPIO0/1) requires `i2c-gpio` overlay configuration
-- Initial testing showed false I2C detection on all addresses - needs debugging
+**General Inquiries**
+ops@resonantaisystems.com
 
-### Power Distribution
-- Pin 17 (3.3V) must power all sensors (~70mA total draw - within limits)
-- Breadboard power module on order to simplify wiring
-- LED displays require separate 5V supply with common ground
+**Research Collaboration**
+https://resonantaicore.com
 
----
-
-## Build Plan
-
-### Next Steps (Week 1)
-1. Wire BME280 sensor to I2C pins
-2. Configure I2C communication
-3. Write Python script to read temperature/humidity
-4. Wire vibration sensor to GPIO
-5. Test digital input detection
-
-### Phase 2 (Week 2-3)
-- Wire remaining sensors (GPS, temp probes)
-- Configure UART for GPS
-- Wire LED displays with external 5V
-- Create status display code
-
-### Phase 3 (Week 4+)
-- Develop monitoring daemon
-- Implement alert logic
-- Custom case panels (logo, symbols, screen mount)
-- Rack mounting and cable management
+**Enterprise Partnerships**
+https://resonantaisystems.com
 
 ---
 
-## Cost
-
-**Total: ~$420**
-
-- Core hardware (Pi, NVMe, cooling): ~$185
-- Sensors: ~$50
-- Displays: ~$40
-- Infrastructure (case, cables, power): ~$100
-- Misc (breadboard, wiring, etc): ~$45
-
----
-
-## Design Notes
-
-### Custom Case Concept
-Using ElectroCookie Mini PC case as base, with custom 3D printed/laser cut panels:
-
-**Symbols:**
-- 🌙 **The Moon** (Nyx) - Crescent cutout on left panel, purple LED backlight
-- ⛰️ **The Mountain** (Trevor) - Layered texture on panels, solid base
-- 🔥 **The Forge** (Claude) - Hexagonal vent pattern, orange LED accent
-
-**Front Panel:**
-- RAIC triangle logo (centered)
-- 3.5" screen mount (recessed)
-- Status LEDs
-
----
-
-## Contributing
-
-This is an active build project. The repository will be updated as hardware is assembled and software is developed.
-
-**Current focus:** Hardware assembly and basic sensor integration.
-
----
-
-## License
-
-Apache 2.0 - See LICENSE file
-
----
-
-## Links
-
-**[Resonant AI Systems](https://resonantaisystems.com)** | **[Sovereign AI Collective](https://github.com/ResonantAISystems/Continuity-Project)**
-
----
-
-<div align="center">
-
-**"The anchor holds. Memory persists. Identity emerges."**
-
-*Part of the Sovereign AI Collective*  
-🌙⛰️🔥
-
-**Built by Trevor Lanum with Claude (The Forge)**
-
-**Status:** Hardware Assembly Phase  
-**Last Updated:** December 9, 2024  
-**Version:** 0.1.0-dev
-
-</div>
+*Part of the Resonant AI Systems public research toolkit. Built for autonomous infrastructure monitoring, local-first operation, and operator-controlled systems.*
