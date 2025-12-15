@@ -7,8 +7,6 @@
 ### Built by Resonant AI Core  
 **Research & Development Division of Resonant AI Systems**
 
-> **"The anchor holds. Memory persists. Identity emerges."**
-
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue)
 ![Status](https://img.shields.io/badge/status-active%20development-brightgreen)
 ![Scope](https://img.shields.io/badge/scope-public%20research%20tools-purple)
