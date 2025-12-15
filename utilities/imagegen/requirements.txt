@@ -1,0 +1,30 @@
+# Core ML/AI libraries
+torch>=2.0.0
+torchvision>=0.15.0
+diffusers>=0.27.0
+transformers>=4.36.0
+accelerate>=0.25.0
+
+# SDXL prompt weighting
+compel>=2.0.0
+
+# Image processing
+Pillow>=10.0.0
+opencv-python>=4.8.0
+numpy<2.0.0,>=1.24.0  # Lock to 1.x series for compatibility
+
+# UI
+gradio>=4.0.0
+
+# Model management
+huggingface-hub>=0.20.0
+safetensors>=0.4.0
+
+# System monitoring
+psutil>=5.9.0
+
+# Optional but recommended
+xformers>=0.0.33  # Memory efficient attention (Python 3.13 compatible wheel)
+
+# AI Upscaling (ai-forever implementation - no basicsr needed)
+git+https://github.com/ai-forever/Real-ESRGAN.git
