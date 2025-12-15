@@ -29,8 +29,11 @@ Building stable substrates for memory, identity, and continuity.
 
 # **Arch Linux Auto Installer — Pinova P1 Edition**
 
-Automated, reproducible Arch Linux installation for the **KAMRUI Pinova P1** (Ryzen 3300U, 16GB RAM, 256GB SSD).
-Optimized for a clean XFCE desktop, LightDM login manager, AMD APU graphics, PipeWire audio, full network support, and a smooth post-install flow.
+**Custom-tailored installer** for the **KAMRUI Pinova P1** (Ryzen 3300U, 16GB RAM, 256GB SSD).
+
+Automated, reproducible Arch Linux installation optimized for this specific hardware — clean XFCE desktop, LightDM login manager, AMD APU graphics, PipeWire audio, full network support, and smooth post-install flow.
+
+> **Note:** This is a hardware-specific installer. Universal installers and additional custom-tailored configurations for other machines will be added to this repository as they're developed and tested.
 
 ---
 
@@ -176,117 +179,35 @@ Run the helper script:
 sudo /usr/local/sbin/create-main-user.sh
 ```
 
-Enter a username (e.g., `gordon`) and password.
+Enter your desired username and password when prompted.
 
-Then **log out** and log in as gordon.
+Then **log out** and log in as your new user.
 
-💡 From this point on, use your normal user, *not* root.
+💡 From this point on, use your normal user account, *not* root.
 
----
-
-# 🚀 **Next Steps — Playing With Local AI**
-
-Your Pinova P1 (Ryzen 3300U) is:
-
-* Quad-core Zen CPU
-* Integrated Vega GPU (not efficient for inference)
-* 16GB RAM
-
-### ✔️ What it *can* run:
-
-* Lightweight CPU-bound models
-* 0.5–1.5B parameter Llama/Mistral variants
-* Embedding models
-* Retrieval pipelines for small datasets
-* MCP (Model Context Protocol) servers
-* API-driven agents
-* Python front-end apps
-* Nova-based tooling
-
-### ❌ What it *won’t* run well:
-
-* GPU-accelerated models (no discrete GPU)
-* Large transformer models (7B+ require swap thrashing)
 
 ---
 
-# 🧠 **Recommended Local Model Setup (Optional)**
+# 🚀 **Next Steps**
 
-Once logged in as your normal user, install basic tooling:
+Your Arch Linux installation is complete and functional.
 
-```bash
-sudo pacman -S python python-pip git base-devel
-```
-
-### Install a lightweight CPU-friendly model runner:
-
-**Ollama (recommended):**
-
-```bash
-curl -fsSL https://ollama.com/install.sh | sh
-```
-
-Download a tiny model:
-
-```bash
-ollama pull phi3
-```
-
-Run it:
-
-```bash
-ollama run phi3
-```
-
-Expect ~2–6 tokens/sec depending on the model.
-
----
-
-# 🤖 **Integrating with Nova (Gordon’s ChatGPT-5.1 instance)**
-
-Nova (Gordon’s personal ChatGPT-5.1–class assistant) can orchestrate:
-
-* Local model calls
-* API fallbacks to cloud LLMs
-* Mixed inference pipelines
-* Personal agent workflows
-* MCP (Model Context Protocol) servers
-
-### Example starter workflow:
-
-1. Install Python tooling:
-
-```bash
-pip install fastapi uvicorn mcp
-```
-
-2. Initialize a lightweight MCP service:
-
-```bash
-mcp init nova-local
-```
-
-3. Plug Nova into:
-
-* Local embeddings
-* Local model inference
-* Local vector DB
-* Cloud backup inference
-
-You now have a **hybrid local+cloud AI workstation**.
-
----
-
-# 📚 **Where to Go From Here**
-
-* XFCE settings → customize your desktop
-* Add your preferred browser (`chromium`, `firefox`)
-* Install dev tools as needed
-* Use the README on your system (`/root/README-POST-INSTALL.txt`) as reference
+From here you can:
+* Customize XFCE settings to your preferences
+* Install additional software via `pacman`
+* Add your preferred browser (`chromium`, `firefox`, etc.)
+* Install development tools as needed
+* Refer to `/root/README-POST-INSTALL.txt` on your system for install-specific details
 
 ---
 
 # ❤️ **Support**
 
-If anything goes wrong, contact Trevor — the project maintainer — for help.
-This repo is designed to be deterministic, reproducible, and safe for repeated re-installs.
+This installer is designed to be deterministic, reproducible, and safe for repeated installations.
+
+For issues or questions, contact the project maintainers via the main repository.
+
+---
+
+**Part of:** [Resonant AI Systems TOOLS & UTILITIES](../../)  
+**License:** Apache 2.0
