@@ -6,8 +6,6 @@
 
 **Resonant AI Core · Research & Development Division**
 
-> *“The anchor holds. Memory persists. Identity emerges.”*
-
 <br/>
 
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue)
