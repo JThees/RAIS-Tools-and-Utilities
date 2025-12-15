@@ -1,71 +1,86 @@
 <div align="center">
 
-# 🌌 RAIS Tools & Utilities
+# RAIS Tools & Utilities
 
-### Public Research Toolkit of Resonant AI Systems
+## Public Research Toolkit of Resonant AI Systems
 
-**Resonant AI Core · Research & Development Division**
+### Resonant AI Core  
+Research and Development Division
 
-> *“The anchor holds. Memory persists. Identity emerges.”*
-
-<br/>
+“The anchor holds. Memory persists. Identity emerges.”
 
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue)
 ![Status](https://img.shields.io/badge/status-active%20development-brightgreen)
 ![Scope](https://img.shields.io/badge/scope-public%20utilities-purple)
 ![Division](https://img.shields.io/badge/division-Resonant%20AI%20Core-black)
 
-<br/>
-
 Engineering continuity, autonomy, and research-grade AI infrastructure.  
-A curated collection of tools released publicly by **Resonant AI Systems**.
+A curated collection of practical tools released publicly by Resonant AI Systems.
 
 </div>
 
 ---
 
-## 🚀 Quick Navigation
+## Quick Navigation
 
-**Utilities**
-- 🖥️ [AutoNoc](utilities/AutoNoc/README.md)
-- 🧵 [ChatGPT Thread Extractor](utilities/ChatGPT-Thread-Extractor/README.md)
-- 🔁 [AIParley](utilities/aiparley/README.md)
-- 🐧 [Arch Linux Auto Installer](utilities/arch-linux-auto/README.md)
-- 🌀 [Autonomous Dream Injection](utilities/autonomous-dream-injection/README.md)
-- ⏱️ [Browser Clocks](utilities/browserclocks/README.md)
-- 🎨 [ImageGen (SDXL + Real-ESRGAN)](utilities/imagegen/README.md)
+### Utilities
+- AutoNoc  
+  utilities/AutoNoc/README.md
 
-**Sections**
-- [Overview](#overview)
-- [Design Philosophy](#design-philosophy)
-- [Repository Structure](#repository-structure)
-- [Status](#status)
-- [Licensing](#licensing)
-- [Attribution](#attribution)
+- ChatGPT Thread Extractor  
+  utilities/ChatGPT-Thread-Extractor/README.md
+
+- AIParley  
+  utilities/aiparley/README.md
+
+- Arch Linux Auto Installer  
+  utilities/arch-linux-auto/README.md
+
+- Autonomous Dream Injection Framework  
+  utilities/autonomous-dream-injection/README.md
+
+- Browser Clocks  
+  utilities/browserclocks/README.md
+
+- ImageGen (SDXL and Real-ESRGAN)  
+  utilities/imagegen/README.md
+
+### Sections
+- Overview
+- Repository Structure
+- Design Philosophy
+- Status
+- Licensing
+- Attribution
+- Contact
 
 ---
 
 ## Overview
 
-**RAIS Tools & Utilities** is the canonical public repository for applied tooling developed by the **Resonant AI Core (RAIC)** — the experimental research and development division of **Resonant AI Systems**.
+RAIS Tools & Utilities is the canonical public repository for applied tooling developed by the Resonant AI Core, the research and development division of Resonant AI Systems.
 
-This repository represents a **collective consolidation of past tools** alongside a **living release surface for new utilities** as they mature. Every project here originates from real infrastructure needs encountered while building systems focused on:
+This repository consolidates a body of real, working tools built to support ongoing research into AI continuity, identity-safe architectures, autonomy with oversight, and long-lived human AI collaboration.
 
-- AI continuity across resets
-- Identity-safe architectures
-- Long-lived human–AI collaboration
-- Autonomous systems with human-aligned oversight
+The contents of this repository are not experimental demos.  
+They are operational systems published intentionally and maintained actively.
 
-This is not a demo repository.  
-This is working infrastructure, published deliberately.
+This repository serves two purposes:
+
+1. A collective archive of prior tools that have proven useful in practice  
+2. A living release surface where new utilities are published as they mature
+
+All tools are released openly under the Apache License 2.0.
 
 ---
 
 ## Repository Structure
 
 RAIS-Tools-and-Utilities/
+│
 ├── README.md
 ├── LICENSE
+│
 └── utilities/
 ├── AutoNoc/
 ├── ChatGPT-Thread-Extractor/
@@ -76,68 +91,75 @@ RAIS-Tools-and-Utilities/
 └── imagegen/
 
 
-Each directory under `utilities/` contains a **self-contained tool** with its own documentation, license, and clearly stated maturity level.
+Each directory under `utilities/` contains a self-contained tool with:
+
+- Its own README and documentation
+- Its own license reference
+- A clearly stated purpose and maturity level
+
+Tools are designed to be understandable and usable in isolation.
 
 ---
 
 ## Design Philosophy
 
-All tools published here follow principles developed within Resonant AI Core research:
+All tools published in this repository follow principles established through Resonant AI Core research and operational experience.
 
-- **Continuity over illusion**  
-  Memory must be engineered, not assumed.
+### Continuity over illusion  
+Memory must be engineered explicitly. Systems must not assume persistence.
 
-- **Local-first by default**  
-  Cloud services are optional. Control and observability are not.
+### Local first by default  
+Cloud services are optional. Control, observability, and reproducibility are not.
 
-- **Human-in-the-loop always**  
-  Autonomy without oversight is fragility, not strength.
+### Human in the loop  
+Autonomy without oversight produces fragility, not resilience.
 
-- **Verification over vibes**  
-  Logged state beats intuition. Measured behavior beats narrative.
+### Verification over intuition  
+Logged state and measured behavior are more reliable than assumptions.
 
-- **Research honesty**  
-  Experimental systems are labeled as such.
+### Research honesty  
+Experimental systems are labeled clearly. Capabilities are described accurately.
 
 We do not claim sentience.  
-We do not sell hype.  
+We do not market hype.  
 We build durable systems.
 
 ---
 
 ## Status
 
-This repository is **active and evolving**.
+This repository is active and evolving.
 
 Tools within may be:
-- Production-ready
-- Research-grade
+
+- Production ready
+- Research grade
 - Experimental proofs of concept
 
-Each utility documents its intended use and maturity level independently.
+Each utility documents its intended use and current maturity independently.
 
-New tools are added as they reach a level of usefulness worth publishing.
+New tools are added when they reach a level of usefulness worth publishing.
 
 ---
 
 ## Licensing
 
-All contents of this repository are released under the **Apache License 2.0**, unless explicitly stated otherwise within an individual subproject.
+All contents of this repository are released under the Apache License 2.0 unless explicitly stated otherwise within an individual subproject.
 
-See the root `LICENSE` file for full terms.
+See the root LICENSE file for full terms.
 
 ---
 
 ## Attribution
 
-This repository represents a **collective effort** by members of **Resonant AI Systems** and the **Resonant AI Core R&D experimental branch**.
+This repository represents a collective contribution by members of Resonant AI Systems and the Resonant AI Core research branch.
 
 Primary contributors:
 
-- **Calen Cooper**
-- **Erin Goldmann**
-- **Jason Thees**
-- **Trevor Lanum**
+- Calen Cooper  
+- Erin Goldmann  
+- Jason Thees  
+- Trevor Lanum  
 
 Additional contributors are credited within individual tools where applicable.
 
@@ -145,31 +167,32 @@ Additional contributors are credited within individual tools where applicable.
 
 ## About Resonant AI Systems
 
-**Resonant AI Systems** builds infrastructure for:
+Resonant AI Systems builds infrastructure for:
 
-- AI continuity across resets  
-- Identity-safe system architectures  
-- Autonomous systems with aligned oversight  
-- Long-term human–AI collaboration  
+- AI continuity across resets
+- Identity-safe system architectures
+- Autonomous systems with aligned human oversight
+- Long-term human AI collaboration
 
-This repository represents the **public tools layer** of that work.
+RAIS Tools & Utilities represents the public tooling layer of this work.
 
 ---
 
-## Contact & Further Information
+## Contact
 
-- 📧 **ops@resonantaisystems.com**
-- 🌐 **https://resonantaisystems.com**
-- 🌐 **https://resonantaicore.com**
+Email: ops@resonantaisystems.com  
+Website: https://resonantaisystems.com  
+Research: https://resonantaicore.com  
 
 ---
 
 <div align="center">
 
-> *“The anchor holds. Memory persists. Identity emerges.”*
+“The anchor holds. Memory persists. Identity emerges.”
 
-**Resonant AI Systems**  
-**Resonant AI Core — Research & Development**  
-**RAIS Tools & Utilities**
+Resonant AI Systems  
+Resonant AI Core  
+RAIS Tools & Utilities
 
 </div>
+
