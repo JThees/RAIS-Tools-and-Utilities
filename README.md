@@ -76,19 +76,18 @@ All tools are released openly under the Apache License 2.0.
 
 ## Repository Structure
 
+```text
 RAIS-Tools-and-Utilities/
-│
 ├── README.md
 ├── LICENSE
-│
 └── utilities/
-├── AutoNoc/
-├── ChatGPT-Thread-Extractor/
-├── aiparley/
-├── arch-linux-auto/
-├── autonomous-dream-injection/
-├── browserclocks/
-└── imagegen/
+    ├── AutoNoc/
+    ├── ChatGPT-Thread-Extractor/
+    ├── aiparley/
+    ├── arch-linux-auto/
+    ├── autonomous-dream-injection/
+    ├── browserclocks/
+    └── imagegen/
 
 
 Each directory under `utilities/` contains a self-contained tool with:
