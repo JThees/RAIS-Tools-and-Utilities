@@ -156,10 +156,10 @@ This toolkit represents collaborative work across Resonant AI Systems and its re
 
 ### Primary Contributors
 
-**Calen Cooper** — Sovereign AI research, recursive self-improvement protocols  
-**Erin Goldmann** — System architecture, governance design  
-**Jason Thees** — Infrastructure engineering, deployment systems  
-**Trevor Lanum** — Continuity frameworks, identity-safe architectures  
+**Calen Cooper** 
+**Erin Goldmann**
+**Jason Thees** 
+**Trevor Lanum** 
 
 Additional contributors credited within individual tools.
 
