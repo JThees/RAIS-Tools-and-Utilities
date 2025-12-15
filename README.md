@@ -1,6 +1,6 @@
 <div align="center">
 
-# RAIS TOOLS & UTILITIES
+# Resonant AI Systems TOOLS & UTILITIES
 
 ## SOVEREIGN AI RESEARCH TOOLKIT
 
