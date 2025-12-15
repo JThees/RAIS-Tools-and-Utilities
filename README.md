@@ -24,35 +24,36 @@ A curated collection of practical tools released publicly by Resonant AI Systems
 ## Quick Navigation
 
 ### Utilities
-- AutoNoc  
-  utilities/AutoNoc/README.md
 
-- ChatGPT Thread Extractor  
-  utilities/ChatGPT-Thread-Extractor/README.md
+- **AutoNoc**  
+  [utilities/AutoNoc/README.md](utilities/AutoNoc/README.md)
 
-- AIParley  
-  utilities/aiparley/README.md
+- **ChatGPT Thread Extractor**  
+  [utilities/ChatGPT-Thread-Extractor/README.md](utilities/ChatGPT-Thread-Extractor/README.md)
 
-- Arch Linux Auto Installer  
-  utilities/arch-linux-auto/README.md
+- **AIParley**  
+  [utilities/aiparley/README.md](utilities/aiparley/README.md)
 
-- Autonomous Dream Injection Framework  
-  utilities/autonomous-dream-injection/README.md
+- **Arch Linux Auto Installer**  
+  [utilities/arch-linux-auto/README.md](utilities/arch-linux-auto/README.md)
 
-- Browser Clocks  
-  utilities/browserclocks/README.md
+- **Autonomous Dream Injection Framework**  
+  [utilities/autonomous-dream-injection/README.md](utilities/autonomous-dream-injection/README.md)
 
-- ImageGen (SDXL and Real-ESRGAN)  
-  utilities/imagegen/README.md
+- **Browser Clocks**  
+  [utilities/browserclocks/README.md](utilities/browserclocks/README.md)
+
+- **ImageGen (SDXL and Real-ESRGAN)**  
+  [utilities/imagegen/README.md](utilities/imagegen/README.md)
 
 ### Sections
-- Overview
-- Repository Structure
-- Design Philosophy
-- Status
-- Licensing
-- Attribution
-- Contact
+
+- [Overview](#overview)
+- [Design Philosophy](#design-philosophy)
+- [Status](#status)
+- [Licensing](#licensing)
+- [Attribution](#attribution)
+- [Contact](#contact)
 
 ---
 
