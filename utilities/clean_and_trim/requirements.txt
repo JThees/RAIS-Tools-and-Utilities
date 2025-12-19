@@ -1,0 +1,3 @@
+# Required for the application
+tkinter
+# Note: Tkinter is included in Python's standard library for most installations
